@@ -54,7 +54,7 @@ void initVirtualPins(int v_pin, int h_pin, boolean inverted)
 
 void initVirtualPins(int v_pin, int h_pin)
 {
-  initVirtualPins(v_pin, h_pin, false);
+  initVirtualPins(v_pin, h_pin, true);
 }
 
 void go_forward()
@@ -232,6 +232,9 @@ void setup()
   pinMode(MOTOR_BL1, OUTPUT);
 
   // digitalWrite(2, LOW); // if your relay is HIGH triggering
+  digitalWrite(MOP_RELAY, HIGH);
+  digitalWrite(PUMP_RELAY, HIGH);
+  digitalWrite(VACCUM_RELAY, HIGH);
   Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
 }
 
